@@ -2,7 +2,7 @@
 <html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
-    <title>Episode 4: Your First Custom Vue Component</title>
+    <title>Learn Vue 3: Step by Step</title>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -15,29 +15,17 @@
 
 </div>
 
-<script>
+<script type="module">
+     import AppButton from "/js/components/AppButton.js";
+
     let app = {
         components: {
-            'app-button': {
-
-                template: `
-                    <button class="bg-gray-200 hover:bg-grey-400 border rounded px-5 py-2 disabled:cursor-not-allowed" :disabled="processing">
-                        <slot/>
-                    </button>
-                `,
-
-                data() {
-                    return {
-                        processing: true
-                    };
-                }
-
-            }
+            'app-button': AppButton
         }
     };
 
-
     Vue.createApp(app).mount('#app');
 </script>
+
 </body>
 </html>
