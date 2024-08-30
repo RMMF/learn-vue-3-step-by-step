@@ -6,8 +6,11 @@ export default {
 
     template: `
         <section class="flex gap-8">
-            <assignment-list :assignments="filters.inProgress" title="In Progress">
-                <assignment-create @add="add"></assignment-create>
+
+            <assignment-list
+                :assignments="filters.inProgress"
+                title="In Progress">
+                    <assignment-create @add="add"></assignment-create>
             </assignment-list>
 
             <div v-show="showCompleted">
